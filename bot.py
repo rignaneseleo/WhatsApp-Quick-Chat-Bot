@@ -33,10 +33,10 @@ def reply(update, context):
         number = number.replace(".", "")
         number = number.replace(",", "")
         update.effective_message.reply_text(
-            f"This is the link to open the chat directly:\r\n\r\nhttps://wa.me/{number}", disable_web_page_preview=True, reply_to_message_id=update.effective_message.message_id,
+            f"This is the link to open the chat directly:\r\n\r\n📲 https://wa.me/{number}", disable_web_page_preview=True, reply_to_message_id=update.effective_message.message_id,
         )
     else:
-        update.effective_message.reply_text("""Error, the phone number doesn't start with +
+        update.effective_message.reply_text("""⚠️ The phone number should start with +
     
 Examples:
 +39 1234567890

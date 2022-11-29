@@ -15,6 +15,8 @@ Examples:
 +39 1234567890
 +1 (555) 555-1234
 
+Note: phone numbers are never saved 😇
+
 Credits: @rignaneseleo ✌🏻"""
     )
 

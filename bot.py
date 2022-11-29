@@ -16,7 +16,7 @@ Examples:
 +1 (555) 555-1234
 
 Credits: @rignaneseleo ✌🏻"""
-        )
+    )
 
 # Handle all other messages
 
@@ -24,16 +24,16 @@ Credits: @rignaneseleo ✌🏻"""
 def reply(update, context):
     message = update.effective_message
     if message.text.startswith("+"):
-        number=message.text
-        number=number.replace("+","")
-        number=number.replace(" ","")
-        number=number.replace("-","")
-        number=number.replace("(","")
-        number=number.replace(")","")
-        number=number.replace(".","")
-        number=number.replace(",","")
+        number = message.text
+        number = number.replace("+", "")
+        number = number.replace(" ", "")
+        number = number.replace("-", "")
+        number = number.replace("(", "")
+        number = number.replace(")", "")
+        number = number.replace(".", "")
+        number = number.replace(",", "")
         update.effective_message.reply_text(
-            f"This is the link to open the chat directly:\r\nhttps://wa.me/{number}"
+            f"This is the link to open the chat directly:\r\n\r\nhttps://wa.me/{number}", disable_web_page_preview=True, reply_to_message_id=update.effective_message.message_id,
         )
     else:
         update.effective_message.reply_text("""Error, the phone number doesn't start with +

@@ -7,3 +7,6 @@ You'll receive the link to open the chat to that number, without having it in th
 
 ## BOT
 👉🏻 https://t.me/WaQuickChatBot
+
+## Example
+![Example](https://github.com/rignaneseleo/WhatsApp-Quick-Chat-Bot/blob/main/img/screenshot.png?raw=true "Example")

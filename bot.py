@@ -68,5 +68,5 @@ if __name__ == "__main__":
     dp.add_handler(MessageHandler(Filters.text & ~Filters.command, reply))
 
     # Start the webhook
-    updater.start_polling(dp, skip_updates=False)
+    updater.start_polling(dp)
     updater.idle()

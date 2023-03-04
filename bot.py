@@ -2,7 +2,7 @@ import logging
 import os
 
 from telegram import InlineQueryResultArticle, InputTextMessageContent
-from telegram.ext import ApplicationBuilder,Updater, CommandHandler, MessageHandler, filters, InlineQueryHandler
+from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, InlineQueryHandler
 
 
 def start(update, context):
@@ -61,14 +61,15 @@ if __name__ == "__main__":
     logger = logging.getLogger(__name__)
 
     # Set up the Updater
-    application = ApplicationBuilder().token(TOKEN).build()
+    updater = Updater(TOKEN)
+    dp = updater.dispatcher
     # Add handlers
-    application.add_handler(CommandHandler('start', start))
-    application.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, reply))
+    dp.add_handler(CommandHandler('start', start))
+    dp.add_handler(MessageHandler(Filters.text & ~Filters.command, reply))
 
     # Start the webhook
-    application.run_webhook(listen="0.0.0.0",
+    updater.start_webhook(listen="0.0.0.0",
                           port=int(PORT),
                           url_path=TOKEN,
                           webhook_url=f"https://{NAME}.herokuapp.com/{TOKEN}")
-    application.idle()
+    updater.idle()

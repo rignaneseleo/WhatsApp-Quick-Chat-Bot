@@ -68,8 +68,5 @@ if __name__ == "__main__":
     dp.add_handler(MessageHandler(Filters.text & ~Filters.command, reply))
 
     # Start the webhook
-    updater.start_webhook(listen="0.0.0.0",
-                          port=int(PORT),
-                          url_path=TOKEN,
-                          webhook_url=f"https://{NAME}.herokuapp.com/{TOKEN}")
+    updater.start_polling(dp, skip_updates=False)
     updater.idle()
